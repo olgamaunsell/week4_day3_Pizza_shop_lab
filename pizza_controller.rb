@@ -26,6 +26,9 @@ get('/pizzas/:id') do
   erb(:show)
 end
 
+
+
+
 # CREATE route
 
 post('/pizzas') do
@@ -45,4 +48,18 @@ post('/pizzas/:id/delete') do
 
   redirect "/pizzas"
 
+end
+
+# EDIT route
+# two stage route: find then update database
+
+get('/pizzas/:id/edit') do
+  @pizza = Pizza.find(params[:id])
+  erb(:edit)
+end
+
+post('/pizzas/:id') do
+  @pizza = Pizza.new(params)
+  @pizza.update
+  redirect "/pizzas/#{@pizza.id}"
 end
