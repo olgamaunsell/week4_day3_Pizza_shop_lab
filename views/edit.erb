@@ -8,16 +8,18 @@
 
   <label for="topping-update">Topping: </label>
   <select id="topping-update" class="" name="topping">
-    <option value="<%= @pizza.topping %>"><%= @pizza.topping() %> </option>
-    <option value="Pepperoni">Pepperoni</option>
-    <option value="Italian Sausage">Italian Sausage</option>
-    <option value="Mushroom">Mushroom</option>
+    <option value="Pepperoni"
+    <%= "selected" if @pizza.topping == "Pepperoni" %>>Pepperoni</option>
+    <option value="Italian Sausage"
+    <%= "selected" if @pizza.topping == "Italian Sausage" %>>Italian Sausage</option>
+    <option value="Mushroom"
+    <%= "selected" if @pizza.topping == "Mushroom" %>>Mushroom</option>
   </select>
 
 
   <label for="quantity-update">Quantity: </label>
   <input id="quantity-update" type="number" name="quantity" value="<%= @pizza.quantity %>">
 
-  <input type="submit" name="" value="Save Changes">
+  <input class="side-button" type="submit" name="" value="Save Changes">
 
 </form>

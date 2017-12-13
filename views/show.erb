@@ -3,10 +3,10 @@
 <p>Topping: <%= @pizza.topping %></p>
 <p>Quantity <%= @pizza.quantity %></p>
 
-<form class="" action="/pizzas/<%= @pizza.id %>/delete" method="post">
-  <input type="submit" name="" value="Delete Order">
+<form class="button" action="/pizzas/<%= @pizza.id %>/edit" method="get">
+  <input type="submit" name="" value="Edit Order">
 </form>
 
-<form class="" action="/pizzas/<%= @pizza.id %>/edit" method="get">
-  <input type="submit" name="" value="Edit Order">
+<form class="button" action="/pizzas/<%= @pizza.id %>/delete" method="post">
+  <input type="submit" name="" value="Delete Order">
 </form>

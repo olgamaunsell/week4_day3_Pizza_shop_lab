@@ -26,9 +26,6 @@ get('/pizzas/:id') do
   erb(:show)
 end
 
-
-
-
 # CREATE route
 
 post('/pizzas') do
