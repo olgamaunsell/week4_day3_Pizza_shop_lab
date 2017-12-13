@@ -35,3 +35,14 @@ post('/pizzas') do
 
   erb(:create)
 end
+
+# DELETE route
+
+post('/pizzas/:id/delete') do
+  id = params[:id]
+  @pizza = Pizza.find(id)
+  @pizza.delete()
+
+  redirect "/pizzas"
+
+end
